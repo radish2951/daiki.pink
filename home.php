@@ -23,13 +23,13 @@ if ($wp_query->have_posts()) :
 <article class="img-grid">
     <a href="<?php echo get_permalink(); ?>">
         <?php the_post_thumbnail(); ?>
-        <div class="img-grid-title"><?php the_title(); ?></div>
-<!--
         <div class="img-grid-text">
             <div class="img-grid-title"><?php the_title(); ?></div>
-            <div class="img-grid-description"><?php the_excerpt(); ?></div>
+            <div class="img-grid-meta">
+                <div class="img-grid-date"><?php echo get_the_date(); ?></div>
+                <div class="img-grid-genre">genre: Music Video</div>
+            </div>
         </div>
--->
     </a>
 </article>
 
@@ -52,7 +52,7 @@ else : ?>
 endif; ?>
 
 <script>
-
+/*
 const workGrid = () => {
     const imgGrids = document.getElementsByClassName('img-grid');
     const margin = 1.5; // px
@@ -97,7 +97,7 @@ for (let imgGrid of imgGrids) {
         img.nextElementSibling.classList.remove('show');
     });
 }
-
+ */
 </script>
 
 </div>
