@@ -1,0 +1,355 @@
+/*
+Theme Name: Daiki
+Theme URI: https://daiki.pink/www/wp/wp-content/themes/daiki
+Author: Daiki Ikeda
+Author URI: https://daiki.pink/
+Description: recommended for designers.
+Version: 1.0
+License: 
+License URI: 
+Tags: simple, photo, video, graphic, design, image
+Text Domain: 
+*/
+
+
+
+/*
+ * Golbal Settings
+ */
+
+:root {
+    --text-color: #000;
+    --hover-color: #ff6aad;
+    --link-color: #fff;
+    --background-color: var(--hover-color);
+}
+
+html {
+    font-family: "Helvetica Neun", "Yu Gothic", "Noto Sans Japanese", "MS Pゴシック", "MS PGothic", "sans-serif";
+    color: var(--text-color);
+}
+
+body {
+    margin: 0;
+    font-size: 0;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+.show {
+    opacity: 1;
+}
+
+p {
+    text-align: justify;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+ 
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none; 
+    color: var(--link-color); 
+    background: var(--background-color);
+}
+
+a:hover {
+    color: var(--hover-color);
+    background: none;
+}
+
+pre {
+    overflow: scroll;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+}
+
+code {
+    font-family: "Courier New";
+}
+
+/*
+ * Global Settings End
+ */
+
+
+
+/*
+ * Header Settings
+ */
+
+header {
+    width: 100%;
+}
+
+header #sitename {
+    font-size: 12px;
+    margin: 5px 0 0 5px;
+}
+
+header .menu-menu-container {
+    margin: 0;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+header .menu-menu-container ul.menu li {
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 20px;
+}
+
+header  .menu-menu-container a {
+    background: none;
+    color: var(--text-color);
+}
+
+header .menu-menu-container a:hover {
+    color: var(--hover-color);
+}
+
+/*
+ * Header Settings End
+ */
+
+
+
+/*
+ * Contents Settings
+ */
+/*
+.content {
+    font-size: 16px;
+}
+*/
+.page, .post {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 100px auto;
+}
+
+.tag {
+    text-align: center;
+    margin: 5rem;
+}
+
+.post-meta {
+    margin: 0 0 3rem 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.post-title h1 {
+    font-size: 38px;
+    text-align: center;
+    margin: 10px;
+}
+
+.post-title-photo h1 {
+    font-size: 1.2rem;
+    text-align: right;
+    margin-right: 0.4rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+.post p,
+.page p {
+    font-size: 16px;
+    line-height: 200%;
+}
+
+.aligncenter {
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.wp-caption {
+    margin: 0 0 3rem 0;
+}
+
+
+/* category movie */
+
+#content-movie {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.img-grid {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    margin: 0;
+}
+
+.img-grid a {
+    background: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.img-grid a img {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+.img-grid a img.transparent {
+    opacity: 0.1;
+}
+
+.img-grid .img-grid-title {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 28px;
+    color: var(--hover-color);
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.img-grid .img-grid-title.show {
+    opacity: 1;
+}
+
+/* category work end */
+
+/* category photo */
+
+#content-photo {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.photo-grid {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 3px 3px;
+    width: calc((100% - 9px) / 2);
+}
+
+/* category photo end */
+
+/* work single post */
+.youtube {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    margin-bottom: 80px;
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* work single post end */
+
+
+
+@media screen and (max-width: 787px) {
+
+    ul.menu {
+        text-align: right;
+    }
+
+    header .menu-menu-container ul.menu li {
+        font-size: 18px;
+        margin: 0 5px;
+    }
+
+    .post,
+    .page {
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .post p,
+    .page p,
+    .page h1,
+    .post h1,
+    .post h2,
+    .page h2,
+    .post h3,
+    .page h3,
+    .post ul,
+    .page ul{
+        margin: auto 6px;
+    }
+
+    .post-title {
+        margin: 20px;
+    }
+
+    .post-title h1 {
+        font-size: 20px;
+    }
+
+    .post-title-photo h1 {
+        font-size: 20px;
+    }
+                   
+    .wp-caption {
+        max-width: 100vw;
+    }                
+
+    img {
+        max-width: 100vw;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .post p,
+    .page p,
+    .post ul,
+    .page ul {
+        font-size: 14px;
+    }
+
+    .photo-grid {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
