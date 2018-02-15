@@ -27,7 +27,7 @@ if ($wp_query->have_posts()) :
             <div class="img-grid-title"><?php the_title(); ?></div>
             <div class="img-grid-meta">
                 <div class="img-grid-date"><?php echo get_the_date(); ?></div>
-                <div class="img-grid-genre">genre: Music Video</div>
+                <div class="img-grid-genre"><?php $tags = get_the_tags(); if ($tags[0]) { echo $tags[0]->name; } ?></div>
             </div>
         </div>
     </a>
