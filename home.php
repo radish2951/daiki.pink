@@ -18,16 +18,18 @@ $wp_query = $custom_query;
 if ($wp_query->have_posts()) :
     while ($wp_query->have_posts()) :
         $wp_query->the_post();
+
+$tags = get_the_tags();
 ?>
 
 <article class="img-grid">
     <a href="<?php echo get_permalink(); ?>">
         <?php the_post_thumbnail(); ?>
         <div class="img-grid-text">
-            <div class="img-grid-title"><?php the_title(); ?></div>
+            <h1 class="img-grid-title"><?php the_title(); ?></h1>
             <div class="img-grid-meta">
-                <div class="img-grid-date"><?php echo get_the_date(); ?></div>
-                <div class="img-grid-genre"><?php $tags = get_the_tags(); if ($tags[0]) { echo $tags[0]->name; } ?></div>
+                <p class="img-grid-genre"><?php if ($tags[0]) { echo $tags[0]->name . ' / ' . $tags[0]->description; } ?></p>
+                <p class="img-grid-date"><?php echo get_the_date(); ?></p>
             </div>
         </div>
     </a>
