@@ -52,56 +52,21 @@ else : ?>
 endif; ?>
 
 <script>
-/*
-const workGrid = () => {
-    const imgGrids = document.getElementsByClassName('img-grid');
-    const margin = 1.5; // px
-    const gridNum = 2;
-    const contentWidth = document.getElementById('content-movie').clientWidth;
-    const gridSize = (contentWidth - margin * 2) / gridNum;
-    for (let imgGrid of imgGrids) {
-        const w = imgGrid.firstElementChild.firstElementChild.clientWidth;
-        const h = imgGrid.firstElementChild.firstElementChild.clientHeight;
-        if (w <= h) {
-            imgGrid.style.width = gridSize + 'px';
-            imgGrid.style.height = gridSize + 'px';
-        } else {
-            imgGrid.style.height = contentWidth / gridNum + 'px';
-            const img = imgGrid.firstElementChild.firstElementChild;
-            img.style.position = 'relative';
-            img.style.top = (imgGrid.clientHeight - img.clientHeight) / 2 + 'px';
-        }
-        imgGrid.style.padding = margin + 'px';
-        imgGrid.style.boxSizing = 'border-box';
-    }
-    
-    const contentWork = document.getElementById('content-movie');
-    contentWork.style.padding = margin == 0 ? margin : margin + 'px';
-    contentWork.style.boxSizing = 'border-box';
-    
-};
-
-window.addEventListener('load', workGrid);
-window.addEventListener('resize', workGrid);
-
 const imgGrids = document.getElementsByClassName('img-grid');
 for (let imgGrid of imgGrids) {
     imgGrid.addEventListener('mouseenter', () => {
-        const img = imgGrid.firstElementChild.firstElementChild;
+        const img = imgGrid.getElementsByTagName('img')[0];
         img.classList.add('transparent');
-        img.nextElementSibling.classList.add('show');
     });
     imgGrid.addEventListener('mouseleave', () => {
-        const img = imgGrid.firstElementChild.firstElementChild;
+        const img = imgGrid.getElementsByTagName('img')[0];
         img.classList.remove('transparent');
-        img.nextElementSibling.classList.remove('show');
     });
 }
- */
 </script>
 
 </div>
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>
+<!--<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>-->
 
 <?php get_footer(); ?>

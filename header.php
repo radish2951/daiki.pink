@@ -77,6 +77,23 @@ endif;
     </script>
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
 <?php endif; ?>
+
+<script>
+const hoverLink = () => {
+    links = document.getElementsByTagName('a');
+    for (let link of links) {
+        link.addEventListener('mouseenter', () => {
+            link.classList.add('hover');
+        });
+        link.addEventListener('mouseleave', () => {
+            link.classList.remove('hover');
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', hoverLink);
+</script>
+
     <?php wp_head(); ?>
 </head>
 <body>

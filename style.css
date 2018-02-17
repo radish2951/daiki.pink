@@ -59,13 +59,13 @@ a {
     text-decoration: none; 
     color: var(--pink-color); 
     background: none;
+    transition: color 200ms, background 200ms;
 }
 
-a:hover {
+a.hover, a .hover {
     color: #fff;
     background: var(--pink-color);
 }
-
 pre {
     overflow: scroll;
 }
@@ -191,37 +191,50 @@ h3 {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     box-sizing: border-box;
     grid-template-columns: repeat(2, 1fr);
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 30px;
 }
 
 .img-grid a {
     display: block;
     border-radius: 4px;
     overflow: hidden;
+    background: #fff;
 }
 
 .img-grid a img {
     width: 100%;
     height: auto;
     object-fit: cover;
+    opacity: 1;
+    transition: opacity 300ms;
 }
 
-.img-grid .img-grid-text {
+.img-grid a img.transparent {
+    opacity: 0.5;
+}
+
+.img-grid a .img-grid-text {
     display: flex;
     justify-content: space-between;
     padding: 6px;
+    background: inherit;
+    transition: background 300ms;
 }
 
-.img-grid .img-grid-text .img-grid-title {
+.img-grid a.hover .img-grid-text {
+    background: var(--pink-color);
+}
+
+.img-grid a .img-grid-text .img-grid-title {
     font-size: 16px;
     font-weight: bold;
 }
 
-.img-grid .img-grid-text .img-grid-meta {
+.img-grid a .img-grid-text .img-grid-meta {
     font-size: 13px;
     text-align: right;
 }
