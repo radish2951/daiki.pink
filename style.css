@@ -116,13 +116,27 @@ header .menu-menu-container a.hover {
 
 
 
+/* content settings */
+
+.content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.page, .post {
+    font-size: 18px;
+}
+
 /* category movie */
 
 #content-movie {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 10px;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -175,16 +189,17 @@ header .menu-menu-container a.hover {
 
 #content-photo {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
 }
 
-.photo-grid {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    margin: 0 0 3px 3px;
-    width: calc((100% - 9px) / 2);
+.photo-grid img {
+    width: 100%;
+    height: auto;
 }
 
 

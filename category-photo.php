@@ -10,13 +10,13 @@ while (have_posts()) : the_post(); ?>
 $content = get_the_content();
 preg_match_all('/<img.*?>/', $content, $matches);
 ?>
-<div class="photo-grid">
+<article class="photo-grid">
 <a href="<?php echo get_permalink(); ?>">
 <?php 
 $l = count($matches[0]);
 echo $matches[0][rand(0, $l-1)]; ?>
 </a>
-</div>
+</article>
 <?php
 endwhile; ?>
 <?php else : ?>
@@ -32,6 +32,7 @@ endif; ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>
 
 <script>
+/*
 const photoGrid = () => {
 
     const w = document.getElementById('content-photo').clientWidth;
@@ -94,6 +95,30 @@ if (!navigator.userAgent.match(/(iPhone|iPod|Android)/)) {
     window.addEventListener('load', photoGrid);
     window.addEventListener('resize', photoGrid);
 } 
+ */
+
+const photos = document.getElementsByClassName('photo-grid');
+for (let photo of photos) {
+    const img = photo.getElementsByTagName('img')[0];
+    photo.addEventListener('mouseenter', () => {
+        document.body.style.backgroundImage = 'url(' + img.src + ')';
+        for (let p of photos) {
+            p.getElementsByTagName('img')[0].style.opacity = 0;
+        }
+        photo.style.background = 'white';
+    });
+    photo.addEventListener('mouseleave', () => {
+        document.body.style.backgroundImage = 'none';
+        for (let p of photos) {
+            p.getElementsByTagName('img')[0].style.opacity = 1;
+        }
+        photo.style.background = 'none';
+    });
+}
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundAttachment = 'fixed';
+});
 </script>
 
 <!--<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>-->
