@@ -6,8 +6,6 @@
 
 $custom_query_args = array('category_name' => 'movie');
 
-//$custom_query_args['paged'] = get_query_var('paged') ? get_query_var('paged') : 1;
-
 $custom_query = new WP_Query($custom_query_args);
 
 $tmp_query = $wp_query;
@@ -37,11 +35,6 @@ $tags = get_the_tags();
 <?php
 endwhile;
 wp_reset_postdata();
-/*the_posts_pagination(array(
-    'prev_text' => 'prev',
-    'next_text' => 'next',
-    'screen_reader_text' => ' '
-));*/
 $wp_query = NULL;
 $wp_query = $tmp_query;
 else : ?>
@@ -64,6 +57,39 @@ for (let imgGrid of imgGrids) {
         img.classList.remove('transparent');
     });
 }
+</script>
+
+<script>
+/* Add select box by genre */
+const allGenres = Array.prototype.map.call(imgGrids, imgGrid => {
+    const genre = imgGrid.getElementsByClassName('img-grid-genre')[0].innerText;
+    return genre;
+});
+const genres = Array.from(new Set(allGenres));
+
+const select = document.createElement('select');
+for (let genre of genres) {
+    const option = document.createElement('option');
+    option.setAttribute('value', genre);
+    option.textContent = genre;
+    select.appendChild(option);
+}
+const contentMovie = document.getElementById('content-movie');
+document.body.insertBefore(select, contentMovie);
+
+select.addEventListener('change', () => {
+    const i = select.selectedIndex;
+    const genre = genres[i];
+    for (const imgGrid of imgGrids) {
+        const thisGenre = imgGrid.getElementsByClassName('img-grid-genre')[0].innerText;
+        if (genre == thisGenre) {
+            imgGrid.style.display = 'initial';
+        } else {
+            imgGrid.style.display = 'none';
+        }
+    }
+});
+
 </script>
 
 </div>

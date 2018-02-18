@@ -1,4 +1,4 @@
-const fadeTime = 800;
+const fadeTime = 400;
 const message = '';
 
 const overlay = document.createElement('div');
