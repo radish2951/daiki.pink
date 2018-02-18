@@ -94,9 +94,11 @@ const hoverLink = () => {
 document.addEventListener('DOMContentLoaded', hoverLink);
 </script>
 
+
     <?php wp_head(); ?>
 </head>
 <body>
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/loading.js"></script>
     <header id="header">
         <div id="sitename"><?php bloginfo('title'); ?></div>
 <?php wp_nav_menu(); ?>

@@ -23,8 +23,6 @@ endwhile; endif; ?>
 
 </div>
 
-<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>
-
 <script>
 const regularizePhotoSize = () => {
     const photos = document.getElementsByClassName('photo-grid');
@@ -51,7 +49,7 @@ const regularizePhotoSize = () => {
         const squareRatio = minSquare / squares[i];
         const ratio = Math.sqrt(squareRatio);
         photos[i].style.width = 100 * ratio + '%';
-        photos[i].style.flexBasis = 50 * ratio + '%'; // flex
+        photos[i].style.flexBasis = 50 * ratio + '%';
     }
 };
 

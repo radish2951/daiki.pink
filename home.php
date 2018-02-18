@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <div id="content-movie" class="content">
 
 <?php
@@ -68,7 +67,5 @@ for (let imgGrid of imgGrids) {
 </script>
 
 </div>
-
-<!--<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>-->
 
 <?php get_footer(); ?>

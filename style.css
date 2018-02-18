@@ -193,15 +193,8 @@ header .menu-menu-container a.hover {
 
 #content-photo {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-    /*
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    align-items: center;
-    grid-gap: 10px;
-    */
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -209,7 +202,7 @@ header .menu-menu-container a.hover {
 }
 
 .photo-grid {
-    margin: 1%;
+    margin: 10px;
 }          
 
 .photo-grid img {
@@ -248,7 +241,7 @@ iframe {
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
-        grid-gap: 100px;
+        grid-gap: 80px;
     }
 
     .photo-grid {
