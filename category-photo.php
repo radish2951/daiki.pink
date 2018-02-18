@@ -18,14 +18,7 @@ echo $matches[0][rand(0, $l-1)]; ?>
 </a>
 </article>
 <?php
-endwhile; ?>
-<?php else : ?>
-<div class="post">
-<h2>Page Not Found</h2>
-<p>ページが見つかりません。</p>
-</div>
-<?php 
-endif; ?>
+endwhile; endif; ?>
 
 </div>
 
@@ -95,7 +88,6 @@ if (!navigator.userAgent.match(/(iPhone|iPod|Android)/)) {
     window.addEventListener('load', photoGrid);
     window.addEventListener('resize', photoGrid);
 } 
- */
 
 const photos = document.getElementsByClassName('photo-grid');
 for (let photo of photos) {
@@ -119,8 +111,34 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.backgroundSize = 'cover';
     document.body.style.backgroundAttachment = 'fixed';
 });
-</script>
 
-<!--<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>-->
+ */
+
+
+
+const displayImgInfo = () => {
+    const photos = document.getElementsByClassName('photo-grid');
+    const imgs = document.getElementsByTagName('img');
+    const squares = Array.prototype.map.call(imgs, (img) => {
+        let w = parseInt(img.getAttribute('width'));
+        let h = parseInt(img.getAttribute('height'));
+        if (w < h) {
+            const ratio = h / w;
+            w *= ratio;
+            h *= ratio;
+        }
+        return w * h;
+    });
+    const minSquare = Math.min(...squares);
+    for (let i = 0; i < imgs.length; i++) {
+        const squareRatio = minSquare / squares[i];
+        const ratio = Math.sqrt(squareRatio);
+        photos[i].style.width = 100 * ratio + '%';
+    }
+};
+
+window.addEventListener('load', displayImgInfo);
+window.addEventListener('resize', displayImgInfo);
+</script>
 
 <?php get_footer(); ?>
