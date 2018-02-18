@@ -4,32 +4,23 @@
 <?php 
 if (have_posts()) :
 while (have_posts()) : the_post(); ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php if (in_category('photo')) : the_content(); ?>
     <div class="post-title post-title-photo">
         <h1><?php the_title(); ?></h1>
     </div>
     <?php else : ?>
-    <div class="post-title">
-        <h1><?php the_title(); ?></h1>
-    </div>
-    <?php if (in_category('article')) : ?>
+    <header class="post-header">
+    <h1 class="post-title"><?php the_title(); ?></h1>
     <div class="post-meta">
-        <div class="post-date"><?php the_date(); ?></div>
-        <div class="post-tags"><?php the_tags('tags: ', ','); ?></div>
+        <div class="post-date"><?php the_date('Y年m月d日'); ?></div>
+        <div class="post-tags"><?php the_tags(''); ?></div>
     </div>
-    <?php endif; ?>
+    </header>
     <?php the_content(); endif; ?>
-</div>
+</article>
 <?php
-endwhile;
-else : ?>
-<div class="post">
-<h2>Page Not Found</h2>
-<p>ページが見つかりません。</p>
-</div>
-<?php 
-endif; ?>
+endwhile; endif; ?>
 
 </div>
 

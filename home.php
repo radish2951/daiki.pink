@@ -60,7 +60,7 @@ for (let imgGrid of imgGrids) {
 </script>
 
 <script>
-/* Add select box by genre */
+/* Add select box by genre
 const allGenres = Array.prototype.map.call(imgGrids, imgGrid => {
     const genre = imgGrid.getElementsByClassName('img-grid-genre')[0].innerText;
     return genre;
@@ -89,6 +89,7 @@ select.addEventListener('change', () => {
         }
     }
 });
+ */
 
 </script>
 
