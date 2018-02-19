@@ -20,6 +20,7 @@ Text Domain:
 :root {
     --text-color: #000;
     --pink-color: #ff6aad;
+    --gray-color: #777;
 }
 
 html {
@@ -50,13 +51,7 @@ li {
 a {
     text-decoration: none; 
     color: var(--pink-color); 
-    background: none;
-    transition: color 150ms, background 150ms;
-}
-
-a.hover, a .hover {
-    color: #fff;
-    background: var(--pink-color);
+    background: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -72,13 +67,31 @@ code {
     font-family: "Courier New";
 }
 
-.hide {
-    opacity: 0;
-    transition: opacity 500ms;
+img {
+    width: 100%;
+    height: auto;
 }
 
-.show {
+
+
+/* transition */
+
+a {
+    transition: color 100ms, background 100ms;
+}
+
+a:hover {
+    color: white;
+    background: var(--pink-color);
+}
+
+img {
     opacity: 1;
+    transition: opacity 300ms;
+}
+
+.hover-grid:hover img {
+    opacity: 0.2;
 }
 
 
@@ -108,8 +121,8 @@ header#header .menu-menu-container a {
     color: var(--text-color);
 }
 
-header#header .menu-menu-container a.hover {
-    color: #fff;
+header#header .menu-menu-container a:hover {
+    color: white;
 }
 
 
@@ -151,7 +164,7 @@ header#header .menu-menu-container a.hover {
 .post-meta {
     display: flex;
     align-items: baseline;
-    color: #777;
+    color: var(--gray-color);
     font-size: 20px;
 }
 
@@ -160,11 +173,11 @@ header#header .menu-menu-container a.hover {
 }
 
 .post-meta .post-tags a {
-    color: #777;
+    color: var(--gray-color);
 }
 
-.post-meta .post-tags a.hover {
-    color: #fff;
+.post-meta .post-tags a:hover {
+    color: white;
 }
 
 
@@ -184,46 +197,28 @@ header#header .menu-menu-container a.hover {
 
 .img-grid a {
     display: block;
-    overflow: hidden;
-    background: #fff;
-}
-
-.img-grid a img {
-    width: 100%;
-    height: auto;
-    opacity: 1;
-    transition: opacity 300ms;
-}
-
-.img-grid a img.transparent {
-    opacity: 0.5;
+    background: white;
 }
 
 .img-grid a .img-grid-text {
-    color: var(--text-color);
     padding: 6px;
-    background: inherit;
-    transition: background 300ms;
 }
 
-.img-grid a.hover .img-grid-text {
-    color: #fff;
-    background: var(--pink-color);
-}
-
-.img-grid a .img-grid-text .img-grid-title {
+.img-grid a h1 {
+    color: var(--text-color);
     font-size: 18px;
 }
 
-.img-grid a .img-grid-text .img-grid-meta {
-    color: #777;
+.img-grid a .img-grid-meta {
+    color: var(--gray-color);
     font-size: 13px;
     display: flex;
     justify-content: space-between;
 }
 
-.img-grid a.hover .img-grid-text .img-grid-meta {
-    color: #fff;
+.img-grid a:hover * {
+    color: white;
+    background: var(--pink-color);
 }
 
 
@@ -242,11 +237,26 @@ header#header .menu-menu-container a.hover {
 
 .photo-grid {
     margin: 10px;
+    position: relative;
 }          
 
-.photo-grid img {
+.photo-grid h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: var(--text-color);
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.photo-grid:hover h1 {
+    opacity: 1;
 }
 
 
@@ -285,5 +295,10 @@ iframe {
 
     .photo-grid {
         margin: 0;
+    }
+
+    .photo-grid h1 {
+        position: relative;
+        opacity: 1;
     }
 }

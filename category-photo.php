@@ -10,12 +10,12 @@ while (have_posts()) : the_post(); ?>
 $content = get_the_content();
 preg_match_all('/<img.*?>/', $content, $matches);
 ?>
-<article class="photo-grid">
+<article class="photo-grid hover-grid">
 <a href="<?php echo get_permalink(); ?>">
 <?php 
 $l = count($matches[0]);
 echo $matches[0][rand(0, $l-1)]; ?>
-<h1 style="font-size: 16px; text-align: center; color: #000;"><?php the_title(); ?></h1>
+<h1><?php the_title(); ?></h1>
 </a>
 </article>
 <?php
@@ -24,6 +24,7 @@ endwhile; endif; ?>
 </div>
 
 <script>
+/* Resize photo size so that all photos have the same squares */
 const regularizePhotoSize = () => {
     const photos = document.getElementsByClassName('photo-grid');
     const imgs = document.getElementsByTagName('img');

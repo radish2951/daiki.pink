@@ -19,11 +19,11 @@ if ($wp_query->have_posts()) :
 $tags = get_the_tags();
 ?>
 
-<article class="img-grid">
+<article class="img-grid hover-grid">
     <a href="<?php echo get_permalink(); ?>">
         <?php the_post_thumbnail(); ?>
         <div class="img-grid-text">
-            <h1 class="img-grid-title"><?php the_title(); ?></h1>
+            <h1><?php the_title(); ?></h1>
             <div class="img-grid-meta">
                 <p class="img-grid-genre"><?php if ($tags[0]) { echo $tags[0]->name . ' / ' . $tags[0]->description; } ?></p>
                 <p class="img-grid-date"><?php echo get_the_date(); ?></p>
@@ -44,20 +44,6 @@ else : ?>
 </div>
 <?php 
 endif; ?>
-
-<script>
-const imgGrids = document.getElementsByClassName('img-grid');
-for (let imgGrid of imgGrids) {
-    imgGrid.addEventListener('mouseenter', () => {
-        const img = imgGrid.getElementsByTagName('img')[0];
-        img.classList.add('transparent');
-    });
-    imgGrid.addEventListener('mouseleave', () => {
-        const img = imgGrid.getElementsByTagName('img')[0];
-        img.classList.remove('transparent');
-    });
-}
-</script>
 
 <script>
 /* Add select box by genre
