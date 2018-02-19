@@ -13,6 +13,8 @@ Text Domain:
 
 
 
+
+
 /*
  * Golbal Settings
  */
@@ -51,7 +53,6 @@ li {
 a {
     text-decoration: none; 
     color: var(--pink-color); 
-    background: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 pre {
-    overflow: scroll;
+    overflow-x: scroll;
 }
 
 code {
@@ -71,6 +72,8 @@ img {
     width: 100%;
     height: auto;
 }
+
+
 
 
 
@@ -93,6 +96,8 @@ img {
 .hover-grid:hover img {
     opacity: 0.2;
 }
+
+
 
 
 
@@ -127,7 +132,9 @@ header#header .menu-menu-container a:hover {
 
 
 
-/* content settings */
+
+
+/* Content settings */
 
 .content {
     width: 100%;
@@ -270,6 +277,8 @@ header#header .menu-menu-container a:hover {
 
 
 
+
+
 /* movie single post */
 
 .youtube {
@@ -291,8 +300,36 @@ header#header .menu-menu-container a:hover {
 
 
 
+/* Form */
+
+#wpcf7-f1018-p21-o1 input, textarea {
+    font-family: inherit;
+}
+
+
+
+
+
+/* Media query */
 
 @media screen and (max-width: 768px) {
+
+    .post, .page {
+        font-size: 16px;
+    }
+
+    .post p, .page p {
+        text-align: left;
+    }
+
+    .post h1, .page h1 {
+        font-size: 29px;
+    }
+
+    .post h2, .page h2 {
+        font-size: 25px;
+    }
+    
     #content-movie {
         grid-template-columns: 1fr;
         padding: 10px;
