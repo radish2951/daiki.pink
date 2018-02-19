@@ -300,10 +300,24 @@ header#header .menu-menu-container a:hover {
 
 
 
+/* photo single post */
+
+.post h1.photo-title {
+    font-size: 21px;
+    text-align: center;
+}
+
+
+
+
+
 /* Form */
 
 #wpcf7-f1018-p21-o1 input, textarea {
     font-family: inherit;
+    font-size: inherit;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -349,5 +363,7 @@ header#header .menu-menu-container a:hover {
     .photo-grid h1 {
         position: relative;
         opacity: 1;
+        font-size: 16px;
+        margin-top: 7px;
     }
 }
