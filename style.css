@@ -87,7 +87,7 @@ a:hover {
 
 img {
     opacity: 1;
-    transition: opacity 300ms;
+    transition: opacity 200ms;
 }
 
 .hover-grid:hover img {
@@ -180,6 +180,15 @@ header#header .menu-menu-container a:hover {
     color: white;
 }
 
+.post img, .page img {
+    display: block;
+    margin: 100px auto;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 60vh;
+}
+
 
 
 /* category movie */
@@ -270,13 +279,16 @@ header#header .menu-menu-container a:hover {
     margin-bottom: 50px;
 }
 
-iframe {
+.youtube iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
+
+
+
 
 
 

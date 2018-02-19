@@ -22,6 +22,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@<?php echo get_option('twitter_username'); ?>">
     <meta name="twitter:title" content="<?php wp_title(''); ?>">
+<!--
 <?php
 /*
  * if this is single page, set random image in this article to og:image
@@ -62,9 +63,9 @@ endif;
     <meta name="twitter:image" content="<?php echo $default_img; ?>">
 <?php endif; ?>
 
+-->
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?ver=<?php echo rand() % 10000000000 ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
@@ -77,23 +78,6 @@ endif;
     </script>
     <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
 <?php endif; ?>
-
-<script>
-const hoverLink = () => {
-    links = document.getElementsByTagName('a');
-    for (let link of links) {
-        link.addEventListener('mouseenter', () => {
-            link.classList.add('hover');
-        });
-        link.addEventListener('mouseleave', () => {
-            link.classList.remove('hover');
-        });
-    }
-}
-
-document.addEventListener('DOMContentLoaded', hoverLink);
-</script>
-
 
     <?php wp_head(); ?>
 </head>
