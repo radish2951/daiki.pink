@@ -1,15 +1,12 @@
 <?php
 /* remove p tag on img */
 function remove_p_on_img($content) {
-    return preg_replace('/<p>(.*)(<img .* \/>)(.*)<\/p>/iU', '<div class="wp-caption">\1\2\3</div>', $content);
-}
-
-function youtube($youtube_id) {
-    echo '<div class="youtube"><iframe src="https://www.youtube.com/embed' . $youtube_id . '?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>';
+    return preg_replace('/<p>(.*)(<img .*?>)(.*)<\/p>/iU', '\1\2\3', $content);
 }
 
 add_filter('the_content', 'remove_p_on_img');
 
+/* Add thumbnail field */
 add_theme_support('post-thumbnails');
 
 

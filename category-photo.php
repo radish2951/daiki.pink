@@ -36,7 +36,7 @@ const regularizePhotoSize = () => {
         if (w > maxWidth) maxWidth = w;
         return { width: w, height: h };
     });
-    for (let size of sizes) {
+    for (const size of sizes) {
         const ratio = maxWidth / size.width;
         size.width *= ratio;
         size.height *= ratio;
