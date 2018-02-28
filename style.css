@@ -196,6 +196,21 @@ header#header .menu-menu-container a:hover {
     max-height: 60vh;
 }
 
+.photo-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2px;
+    margin: 50px 0;
+}
+
+.photo-section img {
+    margin: 0;
+}
+
+.photo-section img.photo-large {
+    grid-column: 1 / 3;
+}
+
 
 
 /* category movie */
@@ -327,6 +342,68 @@ header#header .menu-menu-container a:hover {
 /* Media query */
 
 @media screen and (max-width: 768px) {
+
+    body {
+        padding-top: 100px;
+    }
+
+    header#header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 54px;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        padding: 0 6px;
+        box-sizing: border-box;
+    }
+
+    header#header #sitename {
+        margin: 0;
+    }
+
+    header#header .menu-menu-container {
+        margin: 0;
+        text-align: right;
+        transition: color 300ms;
+    }
+
+    header#header .menu-menu-container::before {
+        content: "≡";
+        font-size: 50px;
+    }
+
+    header#header .menu-menu-container.show {
+        color: var(--pink-color);
+    }
+
+    header#header .menu-menu-container ul.menu {
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 0;
+        top: 54px;
+        left: 0;
+        text-align: center;
+        overflow: hidden;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0);
+        transition: height 300ms, background 300ms;
+    }
+
+    header#header .menu-menu-container ul.menu.show {
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    header#header .menu-menu-container ul.menu li {
+        font-size: 32px;
+        margin: 0 0 24px 0;
+    }
 
     .post, .page {
         font-size: 16px;

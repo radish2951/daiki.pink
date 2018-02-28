@@ -86,4 +86,12 @@ endif;
     <header id="header">
         <div id="sitename"><?php bloginfo('title'); ?></div>
 <?php wp_nav_menu(); ?>
+<script>
+const menu = document.getElementsByClassName('menu-menu-container')[0];
+const menuList = menu.getElementsByTagName('ul')[0];
+menu.addEventListener('click', () => {
+    menuList.classList.toggle('show');
+    menu.classList.toggle('show');
+});
+</script>
     </header>

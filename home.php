@@ -46,7 +46,8 @@ else : ?>
 endif; ?>
 
 <script>
-/* Add select box by genre
+/* Add select box by genre 
+const imgGrids = document.getElementsByClassName('img-grid');
 const allGenres = Array.prototype.map.call(imgGrids, imgGrid => {
     const genre = imgGrid.getElementsByClassName('img-grid-genre')[0].innerText;
     return genre;

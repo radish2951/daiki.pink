@@ -1,7 +1,7 @@
 <?php
 /* remove p tag on img */
 function remove_p_on_img($content) {
-    return preg_replace('/<p>(.*)(<img .*?>)(.*)<\/p>/iU', '\1\2\3', $content);
+    return preg_replace('/<p>[^<>]*(<img .+?>)[^<>]*<\/p>/i', '\1', $content);
 }
 
 add_filter('the_content', 'remove_p_on_img');
