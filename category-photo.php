@@ -14,7 +14,10 @@ preg_match_all('/<img.*?>/', $content, $matches);
 <a href="<?php echo get_permalink(); ?>">
 <?php 
 $l = count($matches[0]);
-echo $matches[0][rand(0, $l-1)]; ?>
+if ($l > 0) :
+    echo $matches[0][rand(0, $l-1)];
+endif;
+?>
 <h1><?php the_title(); ?></h1>
 </a>
 </article>

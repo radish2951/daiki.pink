@@ -26,7 +26,7 @@ Text Domain:
 }
 
 html {
-    font-family: "Helvetica Neue", "Yu Gothic", "Noto Sans Japanese", "MS Pゴシック", "MS PGothic", "sans-serif";
+    font-family: -apple-system, "BlinkMacSystemFont", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Yu Gothic", "sans-serif";
     color: var(--text-color);
 }
 
@@ -388,6 +388,7 @@ header#header .menu-menu-container a:hover {
         height: 0;
         top: 54px;
         left: 0;
+        padding-top: 100px;
         text-align: center;
         overflow: hidden;
         z-index: 1000;
@@ -397,7 +398,7 @@ header#header .menu-menu-container a:hover {
 
     header#header .menu-menu-container ul.menu.show {
         height: 100vh;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 1);
     }
 
     header#header .menu-menu-container ul.menu li {
