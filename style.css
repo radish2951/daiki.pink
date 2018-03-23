@@ -108,6 +108,15 @@ header#header #sitename {
     margin: 5px 0 0 5px;
 }
 
+header#header #menu-button {
+    display: none;
+    margin: 0;
+    padding: 0;
+    font-size: 42px;
+    background: none;
+    border: none;
+}
+
 header#header .menu-menu-container {
     margin-bottom: 28px;
 }
@@ -355,6 +364,7 @@ header#header .menu-menu-container a:hover {
         height: 54px;
         z-index: 1000;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         background: white;
@@ -364,46 +374,48 @@ header#header .menu-menu-container a:hover {
 
     header#header #sitename {
         margin: 0;
+        z-index: 500;
+    }
+
+    header#header #menu-button {
+        display: block;
+        z-index: 500;
+        transition: color 400ms;
+    }
+
+    header#header #menu-button.show {
+        color: var(--pink-color);
     }
 
     header#header .menu-menu-container {
         margin: 0;
-        text-align: right;
-        transition: color 300ms;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+        opacity: 0;
+        z-index: 499;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 400ms;
     }
-
-    header#header .menu-menu-container::before {
-        content: "≡";
-        font-size: 50px;
-    }
-
+    
     header#header .menu-menu-container.show {
-        color: var(--pink-color);
+        opacity: 1;
+        pointer-events: initial;
     }
 
     header#header .menu-menu-container ul.menu {
         display: block;
-        position: fixed;
-        width: 100vw;
-        height: 0;
-        top: 54px;
-        left: 0;
-        padding-top: 100px;
-        text-align: center;
-        overflow: hidden;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0);
-        transition: height 300ms, background 300ms;
-    }
-
-    header#header .menu-menu-container ul.menu.show {
-        height: 100vh;
-        background: rgba(255, 255, 255, 1);
     }
 
     header#header .menu-menu-container ul.menu li {
         font-size: 32px;
-        margin: 0 0 24px 0;
+        margin: 27px 0;
     }
 
     .post, .page {

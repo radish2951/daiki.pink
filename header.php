@@ -65,19 +65,6 @@ endif;
 
 -->
     <link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?ver=<?php echo rand() % 10000000000 ?>" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-<?php if (has_tag('math') || is_tag() || is_category('article')) : ?>
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        CommonHTML: { matchFontHeight: false }
-    });
-    </script>
-    <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
-<?php endif; ?>
 
     <?php wp_head(); ?>
 </head>
@@ -85,13 +72,14 @@ endif;
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/loading.js"></script>
     <header id="header">
         <div id="sitename"><?php bloginfo('title'); ?></div>
+        <button id="menu-button">≡</button>
 <?php wp_nav_menu(); ?>
 <script>
-const menu = document.getElementsByClassName('menu-menu-container')[0];
-const menuList = menu.getElementsByTagName('ul')[0];
-menu.addEventListener('click', () => {
-    menuList.classList.toggle('show');
+const menuButton = document.getElementById('menu-button');
+const menu = document.getElementById('header').getElementsByClassName('menu-menu-container')[0];
+menuButton.addEventListener('click', () => {
     menu.classList.toggle('show');
+    menuButton.classList.toggle('show');
 });
 </script>
     </header>

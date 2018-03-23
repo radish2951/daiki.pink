@@ -5,7 +5,7 @@
 if (have_posts()) :
 while (have_posts()) : the_post(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if (in_category('photo')) : the_content(); ?>
+    <?php if (in_category('photo') || is_page()) : the_content(); ?>
     <?php else : ?>
     <header class="post-header">
     <h1><?php the_title(); ?></h1>

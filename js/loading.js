@@ -2,7 +2,7 @@ const fadeTime = 400;
 const message = '';
 
 const overlay = document.createElement('div');
-const header = document.body.firstElementChild;
+const header = document.getElementById('header');
 const style = document.createElement('style');
 style.innerHTML = `
     #overlay {
