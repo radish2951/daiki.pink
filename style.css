@@ -115,6 +115,7 @@ header#header #menu-button {
     font-size: 42px;
     background: none;
     border: none;
+    outline: none;
 }
 
 header#header .menu-menu-container {
@@ -432,6 +433,10 @@ header#header .menu-menu-container a:hover {
 
     .post h2, .page h2 {
         font-size: 25px;
+    }
+
+    .post .post-meta, .page .post-meta {
+        font-size: inherit;
     }
     
     #content-movie {

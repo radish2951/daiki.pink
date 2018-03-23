@@ -64,12 +64,13 @@ endif;
 <?php endif; ?>
 
 -->
-    <link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?ver=<?php echo rand() % 10000000000 ?>" rel="stylesheet">
+    <link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?ver=<?php echo rand() % 10000000000; ?>" rel="stylesheet">
 
     <?php wp_head(); ?>
 </head>
 <body>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/loading.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/loading.js?ver=<?php echo rand() % 10000000000; ?>"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/img.js?ver=<?php echo rand() % 10000000000; ?>"></script>
     <header id="header">
         <div id="sitename"><?php bloginfo('title'); ?></div>
         <button id="menu-button">≡</button>
